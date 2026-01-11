@@ -51,6 +51,7 @@ ul li a:hover {
 }
 
 .hero {
+    color: #f1e2e3;
     text-align: center;
     margin: 0px auto;
     padding-top: 25vh;
@@ -59,28 +60,77 @@ ul li a:hover {
     line-height: 3.2em;
 }
 
-.content {
+.about {
     background-color: #f1e2e3;
-}
-
-.content > h2 {
-        text-align: center;
-        padding-top: 25px;
-        margin-bottom: 25px;
-        font-size: 33px;
-        background-color:#f1e2e3;
-}
-
-.content > p {
-    line-height: 1.5rem;
     text-align: center;
-    margin: 20px 55px;
+    margin: 0px auto;
+    padding-top: 25vh;
+    height: 65vh;
+    font-size: 23px;
+    line-height: 3.2em;
+}
+
+.about-content h2, .about-content p, .about-content strong {
     background-color: #f1e2e3;
 }
 
-.content > p:last-of-type {
-    padding-bottom: 20px;
+.about p {
+    font-size: 20px;
 }
 
+.tutorial-container {
+  display: flex;
+  margin: auto 25px;
+  padding: 10px;
+  height: 55vh;
+}
+
+.tutorial-html, .tutorial-css {
+    text-align: center;
+    line-height: 1.5rem;
+  border: solid 2px #020077;
+  border-radius: 4px;
+  box-shadow: 0 0 10px;
+  background-color: #ececec;
+  padding: 25px;
+  margin: 25px;
+  transition: all 0.55s ease;
+  max-width: 450px;
+}
+
+.tutorial-html h2, .tutorial-html p, .tutorial-html a, .tutorial-css h2, .tutorial-css p, .tutorial-css a {
+    background-color: #ececec;
+}
+
+.tutorial-html p:first-of-type {
+        border-bottom: 2px solid;
+        padding-top: 10px;
+        margin-bottom: 10px;
+}
+
+.tutorial-css p:first-of-type {
+        border-bottom: 2px solid;
+        padding-top: 10px;
+        margin-bottom: 10px;
+}
+
+footer {
+    padding: 25px;
+    background-color: #251b6b;
+    color: #f1e2e3;
+    border-top: 4px solid goldenrod;
+    text-align: center;
+}
+
+footer p {
+    background-color: #251b6b;
+    font-size: 16px;
+    margin-left: 25px;
+}
+
+footer a {
+    background-color: #251b6b;
+    color: goldenrod;
+}
 
 
