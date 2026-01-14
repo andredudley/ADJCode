@@ -78,13 +78,31 @@ ul li a:hover {
     font-size: 20px;
 }
 
+.about-btn-container {
+    background-color: #f1e2e3;
+}
+
+.about-btn {
+    padding: 10px;
+    border-radius: 32px;
+    box-shadow: 0 0 10px;
+    background-color: #f1e2e3;
+    transition: all 0.5s ease;
+}
+
+.about-btn:hover {
+    background-color: #251b6b;
+    color: #f1e2e3;
+    transform: scale(1.1);
+}
+
 .tutorials {
   height: 85vh;
 }
 
 .tutorials h2 {
     text-align: center;
-    margin: 35px auto;
+    margin: 35px auto 10px auto;
 }
 
 .tutorials p {
@@ -92,37 +110,60 @@ ul li a:hover {
     margin-bottom: 25px;
 }
 
+.tutorial-html p:first-of-type {
+    border-bottom: 2px solid #251b6b
+}
+
+.tutorial-css p:first-of-type {
+    border-bottom: 2px solid #251b6b
+}
+
 
 .tutorial-container {
   display: flex;
-  margin-top: 64px;
-  margin-left: 33vh;
+  margin: 10px auto;
+  justify-content: center;
 }
 
-.tutorial-html {
+.tutorial-html, .tutorial-css {
     border-radius: 6px;
     box-shadow: 0 0 10px;
     width: 250px;
-    margin-right: 33vh;
-    padding: 35px;
+    margin: 20px 20px;
+    padding: 25px;
     text-align: center;
     background-color: #f2f0ef;
-}
-
-.tutorial-css {
-    border-radius: 6px;
-    box-shadow: 0 0 10px;
-    width: 250px;
-    margin-right: 33vh;
-    padding: 35px;
-    text-align: center;
-    background-color: #f2f0ef;
+    transition: all 0.5s ease;
 }
 
 .tutorial-html h2, .tutorial-html p, .tutorial-html a, 
 .tutorial-css h2, .tutorial-css p, .tutorial-css a {
     background-color: #f2f0ef;
 }
+
+.tutorial-html > a, .tutorial-css > a {
+    border: 1px solid #251b6b;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f8f0e3;
+    box-shadow: 0 0 10px; 
+    transition: all 0.4s ease;
+}
+
+.tutorial-html > a:hover, .tutorial-css > a:hover {
+    border: 1px solid #f8f0e3;
+    color: #f8f0e3;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #251b6b;
+    box-shadow: 0 0 10px; 
+    cursor: pointer;
+}
+
+.tutorial-css:hover, .tutorial-html:hover {
+    transform: scale(1.1);
+}
+
 
 
 footer {
