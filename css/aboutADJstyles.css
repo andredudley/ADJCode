@@ -1,5 +1,5 @@
 * {
-    background-color: #f1e2e3;
+    background: radial-gradient(cirle );
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     margin: 0px;
 }
@@ -57,7 +57,7 @@ ul li a:hover {
     justify-content: center;
     width: 55vw;
     box-shadow: 0 0 10px;
-    padding: 25px
+    padding: 25px;
 }
 
 #about-title {
@@ -69,6 +69,8 @@ ul li a:hover {
 #about-content {
     text-indent: 15px;
     line-height: 2.2rem;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 #signature {
