@@ -117,7 +117,6 @@ main {
 /*sections styling for js, only have the first of the sections show, fade in when clicked*/
 .sections {
   display: none;
-  animation: fadeIn 0.3s ease-in-out;
 }
 
 .sections:first-of-type {
