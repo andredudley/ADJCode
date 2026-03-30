@@ -20,28 +20,28 @@
   <aside class="left-sidebar">
     <!--NAV SIDEBAR-->
     <nav>
-      <li><h3><a class="tab-link" href="#Basics">The Basics</a></h3></li>
-      <li><h3><a class="tab-link" href="#Colors">Colors</a></h3></li>
-      <li><h3><a class="tab-link" href="#Box-Model">The Box Model</a></h3></li>
-      <li><h3><a class="tab-link" href="#Typography">Typography</a></h3></li>
-      <li><h3><a class="tab-link" href="#Absolute-Relative-Units">Absolute and Relative Units</a></h3></li>
-      <li><h3><a class="tab-link" href="#Positioning">Positioning</a></h3></li>
-      <li><h3><a class="tab-link" href="#Attribute-Selectors">Attribute Selectors</a></h3></li>
-      <li><h3><a class="tab-link" href="#Pseudo-Classes-Elements">Pseudo Classes and Elements</a></h3></li>
-      <li><h3><a class="tab-link" href="#Flexbox">Flexbox</a></h3></li>
-      <li><h3><a class="tab-link" href="#Grid">Grid</a></h3></li>
-      <li><h3><a class="tab-link" href="#Responsive-Design">Responsive Design</a></h3></li>
-      <li><h3><a class="tab-link" href="#Design">Design</a></h3></li>
-      <li><h3><a class="tab-link" href="#Styling-Forms">Styling Forms</a></h3></li>
-      <li><h3><a class="tab-link" href="#Variables">Variables</a></h3></li>
-      <li><h3><a class="tab-link" href="#Animations">Animations</a></h3></li>
-      <li><h3><a class="tab-link" href="#Accessibility">Accessibility</a></h3></li>
+<li><h3><a class="tab-link" href="#Basics">The Basics</a></h3></li>
+<li><h3><a class="tab-link" href="#Colors">Colors</a></h3></li>
+<li><h3><a class="tab-link" href="#Typography">Typography</a></h3></li>
+<li><h3><a class="tab-link" href="#Box-Model">The Box Model</a></h3></li>
+<li><h3><a class="tab-link" href="#Absolute-Relative-Units">Absolute and Relative Units</a></h3></li>
+<li><h3><a class="tab-link" href="#Positioning">Positioning</a></h3></li>
+<li><h3><a class="tab-link" href="#Flexbox">Flexbox</a></h3></li>
+<li><h3><a class="tab-link" href="#Grid">Grid</a></h3></li>
+<li><h3><a class="tab-link" href="#Responsive-Design">Responsive Design</a></h3></li>
+<li><h3><a class="tab-link" href="#Styling-Forms">Styling Forms</a></h3></li>
+<li><h3><a class="tab-link" href="#Pseudo-Classes-Elements">Pseudo Classes and Elements</a></h3></li>
+<li><h3><a class="tab-link" href="#Attribute-Selectors">Attribute Selectors</a></h3></li>
+<li><h3><a class="tab-link" href="#Variables">Variables</a></h3></li>
+<li><h3><a class="tab-link" href="#Animations">Animations</a></h3></li>
+<li><h3><a class="tab-link" href="#Accessibility">Accessibility</a></h3></li>
+<li><h3><a class="tab-link" href="#Design">Design</a></h3></li>
     </nav>   
     </aside>
 
   <main>
     <section class="sections" id="Basics">
-      <section class="section-part" id="basic-css">
+      <section class="section-part" id="basic-explanation">
       <h2>The Basics</h2>
       <p class="quote">
         <i>"...everything comes down to basics and fundamentals... when push comes to shove, 
@@ -70,6 +70,49 @@
         What is important is that you see how HTML has a role of defining content and structure, and CSS has the role of defining how the content looks. 
         With CSS, you can alter how a website looks without having to change the content in your HTML file.
       </p>
+      <p>
+        If I were to explain CSS as simply as I possibly can: think of a webpage as a house. 
+        If HTML is the structure, then think of CSS as the interior design and decoration.
+        Essentially, CSS makes your websites look good before anything else.
+      </p>
+      </section>
+      <section class="section-part" id="ways-to-use">
+        <h2>
+          What are the Three Main Ways to Use CSS?
+        </h2>
+        <p>
+          CSS is used in three main ways:
+        </p>
+        <ul>
+          <li>Inline CSS</li>
+          <li>Internal CSS</li>
+          <li>External CSS</li>
+        </ul>
+        <p>First, let's begin with inline CSS.</p>
+        <p>Inline CSS is written within the HTML element you wish to design.</p>
+        <img /> <!--INSERT INLINE CSS HERE-->
+        <p>
+          This style of CSS can seem convenient at first when you want to style individual elements,
+          but this can lead to issues with code readability and maintainability later down the line. 
+          It is best practice to use inline CSS when testing a style on an element.
+        </p>
+
+        <p>Now, let's move on to internal CSS.</p>
+        <p>
+          Internal CSS is also written within an HTML document, <i>but</i> you don't write the CSS code within the HTML element.
+          Instead, you write your CSS code in the head section of your HTML document with the &lt;style&gt; tag.
+          It will look a little something like:
+        </p>
+        <img /> <!--INSERT INTERNAL CSS HERE-->
+        <p>This style of CSS is most useful when styling a single document.</p>
+
+        <p>Now, for external CSS.</p>
+        <p>
+          External CSS is what you have probably seen the most throughout your time in making webpages.
+          This style of CSS is written in a separate .css file, and is linked to the HTML document. 
+          The code to link your external .css file to your HTML document will look a little something like:
+        </p>
+        <img /> <!--INSERT LINK HTML HERE-->
       </section>
     </section>
     <section class="sections" id="Colors">
