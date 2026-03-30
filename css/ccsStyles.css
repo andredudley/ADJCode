@@ -109,7 +109,6 @@ anchors change from white to gold.
 main {
   background-color: var(--color1);
   padding: 2rem;
-  overflow-y: auto;
   height: calc(100vh - 78px); /*"fit against header"*/
   top: 78px;
 }
@@ -121,18 +120,6 @@ main {
 
 .sections:first-of-type {
   display: block; /* Show first section by default */
-}
-
-/*moves up and fades in. subject to change when content is added*/
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /*footer styling, is technically "behind" the rest of the content with their z-indexes*/
@@ -158,15 +145,15 @@ footer {
 }
 
 .left-sidebar::-webkit-scrollbar-thumb {
-  background: var(--color4);
+  background: var(--color2);
   border-radius: 3px;
 }
 
 .left-sidebar::-webkit-scrollbar-thumb:hover {
-  background: var(--color4);
+  background: var(--color3);
 }
 
-/* Scrollbar styling for main content */
+/* Scrollbar styling for main content 
 main::-webkit-scrollbar {
   width: 8px;
 }
@@ -184,6 +171,7 @@ main::-webkit-scrollbar-thumb {
 main::-webkit-scrollbar-thumb:hover {
   background: var(--color3);
 }
+  */
 
 /*responsive design, more screens pending*/
 @media (max-width: 768px) {
