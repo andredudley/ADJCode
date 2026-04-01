@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/ccsStyles.css">
+    <link rel="stylesheet" href="/css/docStyles.css">
+    <link rel="stylesheet" crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>&lt;ADJ/Code&gt; | Learn CSS</title>
+    <style>
+      #emphasis { 
+        margin: 4rem;
+      }
+      #emphasis strong { 
+        margin-top: 2rem;
+      }
+    </style>
 </head>
 <body>
   <header class="page-header">
@@ -41,34 +50,44 @@
 
   <main>
     <section class="sections" id="Basics">
-      <section class="section-part" id="basic-explanation">
-      <h2>The Basics</h2>
+      <section id="monologue">
+      <h2 id="section-header">The Basics</h2>
       <p class="quote">
-        <i>"...everything comes down to basics and fundamentals... when push comes to shove, 
-        the basics, fundamentals and technical aspects are going to come into effect"</i>
+        <i>"It's not whether you win or lose, it's how you play the game"</i>
         <br>
-        &mdash; "Ruthless" Robbie Lawler
+        &mdash; Grantland Rice
       </p>
+        <p>
+        In web development, many people are content with scrolling through tutorials, copying the final result they are looking for, and pasting it.
+        Others may also simply type in a prompt for AI to execute and give them all the code they want. 
+        We live in a day and age where solutions are so easy accessible that it seemingly erodes the need of fundamentals in favor of results. 
+        And, at face value, this may seem to be the case... until you realize that everything you've built was not by your hand.
+        You've been playing the game, but you haven't learned the rules. You're winning small battles, but ultimately you will lose the war.
+        </p>
+        <p>
+          CSS, in particular, is especially vulnerable to this. It begins as an&mdash;ahem&mdash;<i>approachable</i> language.
+          You change a color, center some text, boom. Genius.
+          Then you skim the rest of the fundamentals, and suddenly you're getting your teeth kicked in by Grid, slapping <code>!important</code> on everything, and fighting the cascade like swimming up a waterfall, as opposed to understanding it as a system that's supposed to make life easier.
+        </p>
+        <p>And, suddenly, every project feels like a battle, and that doubting voice of <i>maybe this isn't for me</i> goes from the back of your mind to the forefront.</p>
+        <p>I should know. I speak from experience. Technically years of experience. That is why I made this guide, this website in general.</p>
+        <p>
+          Now, I'm not offering a sprint through CSS, or a thirty projects in thirty days gauntlet. But this will act as a survival guide. 
+          A natural foundation that turns the more &quot;advanced&quot; looking stuff into a natural extension of what you know, rather than an insurmountable mountaintop.
+        </p>
+        <p>
+          This guide will focus on how we play the game.
+        </p>
+        <p>
+          Now, monologue aside, what even is CSS?
+        </p>
+      </section>
+      <section class="section-part" id="basic-explanation">
+        <h2>CSS Is. . .</h2>
       <p>CSS, or Cascading Style Sheets, is a markup language used to apply styles to HTML.</p>
-      <p>Generally, CSS is responsible for controlling the layout, color, font, and visual appearance of pages without altering your HTML file.</p>
       <p>
-        Let's look at the home page of this very website for example. <br>
-        In the "What We Do At &lt;ADJ/Code&gt;" section, you'll find a button with the text: <br>
-        "Learn More About &lt;ADJ/Code&gt;"
-        <!--INSERT PICTURE OF WEBSITE HERE-->
-      </p>
-      <p>
-        The HTML code looks like: <br>
-        <!--INSERT PICTURE OF HTML CODE HERE-->
-      </p>
-      <p>
-        The CSS behind it will look like: <br>
-        <!--INSERT PICTURE OF CSS CODE HERE-->
-      </p>
-      <p>
-        You don't need to understand this code entirely right now. 
-        What is important is that you see how HTML has a role of defining content and structure, and CSS has the role of defining how the content looks. 
-        With CSS, you can alter how a website looks without having to change the content in your HTML file.
+        Generally, CSS is responsible for controlling the layout, color, font, and visual appearance of pages without altering your HTML document.
+        As a result, CSS allows for more flexible and maintainable websites as a whole.
       </p>
       <p>
         If I were to explain CSS as simply as I possibly can: think of a webpage as a house. 
@@ -77,9 +96,7 @@
       </p>
       </section>
       <section class="section-part" id="ways-to-use">
-        <h2>
-          What are the Three Main Ways to Use CSS?
-        </h2>
+        <h2>The Three Main Ways to Use CSS</h2>
         <p>
           CSS is used in three main ways:
         </p>
@@ -89,8 +106,13 @@
           <li>External CSS</li>
         </ul>
         <p>First, let's begin with inline CSS.</p>
-        <p>Inline CSS is written within the HTML element you wish to design.</p>
-        <img /> <!--INSERT INLINE CSS HERE-->
+        <p>
+          Inline CSS is written within the HTML element you wish to design. 
+          For example, let's say you want to change a paragraph element's color:
+        </p>
+        <code class="code-examples">
+          &lt;p style="color: red;">This is red text&lt;/p&gt;
+        </code>
         <p>
           This style of CSS can seem convenient at first when you want to style individual elements,
           but this can lead to issues with code readability and maintainability later down the line. 
@@ -103,69 +125,236 @@
           Instead, you write your CSS code in the head section of your HTML document with the &lt;style&gt; tag.
           It will look a little something like:
         </p>
-        <img /> <!--INSERT INTERNAL CSS HERE-->
+
+        <code class="code-examples">
+          &lt;style&gt; <br>
+          p { <br>
+          &emsp;color: red; <br>
+          } <br>
+          &lt;/style&gt;
+        </code>
+
         <p>This style of CSS is most useful when styling a single document.</p>
 
         <p>Now, for external CSS.</p>
         <p>
           External CSS is what you have probably seen the most throughout your time in making webpages.
-          This style of CSS is written in a separate .css file, and is linked to the HTML document. 
+          This style of CSS is written in a separate .css file and linked to the HTML document, located in the &lt;head&gt; section on top of the HTML document.
           The code to link your external .css file to your HTML document will look a little something like:
         </p>
-        <img /> <!--INSERT LINK HTML HERE-->
+        <code class="code-examples">
+          &lt;link rel="stylesheet" href="styles.css"&gt;
+        </code>
+        <p>
+          Now, you've been shown multiple examples of CSS and their uses, but now we need to delve just a bit deeper into syntax.
+          We need to take a closer look at how CSS rules actually work.
+        </p>
+      </section>
+      <section class="section-part" id="css-basic-syntax">
+        <h2>Basic Syntax and Rules</h2>
+        <p>
+          For starters, a CSS rule is composed of two main parts: <br>
+          A selector block and a declaration block
+        </p>
+        <p>You saw a version of this earlier in the examples of CSS use, but here is the basic syntax of a CSS rule.</p>
+        <code class="code-examples">
+          selector { <br>
+          &emsp;property: value; <br>
+          }
+        </code>
+        <p>
+          You have your selector, the property you want to set, and the value you want to set it to. 
+          Think about it this way: <br>
+          <ul>
+            <li>Selector &mdash; targets the specific HTML element you want to style. Selectors can include <code>type</code>, <code>.class</code>, and <code>#id</code></li>
+            <li>Property &mdash; targets what you want to change about the HTML element. This can range from <code>color</code>, to <code>font-family</code>, to <code>background</code>, and much more.</li>
+            <li>Value &mdash; sets the value of the property you wish to style.</li>
+          </ul>
+        </p>
+        <p>
+          You can also apply the same set of styles to multiple selectors. Just look at this code for example.<br>
+          <code class="code-examples">
+              #title, <br>
+              .subtitle { <br>
+                &emsp;color: blue; <br>
+              }
+          </code> <br>
+          Here, you can see that there are <i>multiple</i> selectors. 
+          These selectors target elements in your HTML document that have an <code>id</code> value (beginning with #) of &quot;title&quot;, 
+          while also targeting elements that have a <code>class</code> value (beginning with .) of &quot;subtitle&quot;.
+        </p>
+        <p>
+          And, please, please, <strong>PLEASE</strong> don't forget your semicolons. 
+          They may seem little and unimportant, but they separate your CSS declarations, and if they are forgotten it can cause errors in your CSS. 
+          Thankfully, code editors like Visual Studio Code are very good at letting you know when you forget them.
+        </p>
+        <p>
+          I may, or may not, be speaking from experience. Don't ask. 
+        </p>
+      </section>
+      <section class="section-part" id="comments">
+        <h2>Comments</h2>
+        <p>
+          Now, I know this is a strange transition, going from basic syntax to... comments? 
+          Just hear me out, okay?
+        </p>
+        <p>
+          We know how to make code now, at least we have an idea. But, what about future you?
+          Or, as you grow in your journey as a web developer, what about other people? 
+          This is where the value of comments is the highest. 
+          You aren't just coding for yourself today, but you are also coding for yourself tomorrow, in a week from now, even months or years from now.
+        </p>
+        <p>
+          I say this because it is important to know not just <i>what</i> you're doing, but <i>why</i> you're doing it.
+          This is where comments come in.
+        </p>
+        <p>
+          Comments are essentially notes you can leave in your code that are completely ignored by the browser, and as a result are not shown in your "final prouct".
+          Web developers, use comments to explain the purpose of code, or to separate sections of the code. And, in CSS, they look a little something like this: <br>
+          <code class="code-examples">
+            /*changes color of title for the hover easter egg*/ <br>
+              #title:hover { <br>
+                &emsp;color: blue; <br>
+              }
+          </code>
+        </p>
+        <p>
+          Take a look at the text in the top line of the code. That is a comment. 
+          Comments begin with <code>/*</code> and end with <code>*/</code>. 
+          Comments in CSS can also span multiple lines: <br>
+          <code class="code-examples">
+            /*changes color of title when hovered <br>
+            subject to change*/ <br>
+              #title:hover { <br>
+                &emsp;color: blue; <br>
+              }
+          </code>
+        </p>
+        <p>
+          Now, with comments, they should be used to explain <i>why</i> the code does what it does, rather than <i>what</i> the code does.
+          Your code should already explain what it does on its own, with proper naming.  
+        </p>
+        <code>
+          /* Avoid: states the obvious */
+          p { <br>
+            &emsp;color: red; /* makes text red */ <br>
+          }<br>
+          <br>
+          /* Better: explains reasoning */ <br>
+          p { <br>
+            &emsp;color: red; /* matches brand error color from style guide */ <br>
+        }
+        </code>
+        <p>
+          Comments can also be used for separating sections of your stylesheet: <br><br>
+          <code>
+            /* ========== TYPOGRAPHY ========== */ <br>
+            /* ========== LAYOUT ========== */ <br>
+            /* ========== BUTTONS ========== */
+          </code>
+         </p>
+         <p>
+           For commenting out code to disable it, usually to help with debugging: <br><br>
+          <code>
+            /* Temporarily disabled to test layout issue */ <br>
+            /*.sidebar { <br>
+              &emsp;float: right; <br>
+              &emsp;width: 30%; <br>
+          } */
+          </code>
+         </p> 
+          <p>
+            And to-do notes for future work, down the line: <br>
+            <code>
+              /* TODO: Add hover state for mobile */ <br>
+              /* FIXME: Button alignment breaks in Safari */
+            </code>
+          </p>
+          <p>
+            Also, keep in mind that you can <i>not</i> nest comments in CSS.
+            The moment your comment has a <code>*/</code>, it will close the comment. <br><br>
+              <!--Leaving text as regular outside of the code tag for effect-->
+              /* This comment<code>/* will break */</code> when you try to nest */
+          </p>
+      </section>
+      <section class="section-part" id="dev-tools">
+        <h2>Browser Developer Tools</h2>
+        <p>
+          Every modern browser that you can think of has neat developer tools that allow you to inspect and modify CSS in real time.
+          You may know this tool as &quot;Inspect Element&quot;, or just &quot;Inspect&quot;.
+        </p>
       </section>
     </section>
     <section class="sections" id="Colors">
-      <h2>Colors</h2>
+      <h2 id="section-header">Colors</h2>
     </section>
     <section class="sections" id="Box-Model">
-      <h2>The Box Model</h2>
+      <h2 id="section-header">The Box Model</h2>
     </section>
     <section class="sections" id="Typography">
-      <h2>Typography</h2>
+      <h2 id="section-header">Typography</h2>
     </section>
     <section class="sections" id="Absolute-Relative-Units">
-      <h2>Absolute and Relative Units</h2>
+      <h2 id="section-header">Absolute and Relative Units</h2>
     </section>
     <section class="sections" id="Positioning">
-      <h2>Positioning</h2>
+      <h2 id="section-header">Positioning</h2>
     </section>
     <section class="sections" id="Attribute-Selectors">
-      <h2>Attribute Selectors</h2>
+      <h2 id="section-header">Attribute Selectors</h2>
     </section>
     <section class="sections" id="Pseudo-Classes-Elements">
-      <h2>Pseudo Classes and Elements</h2>
+      <h2 id="section-header">Pseudo Classes and Elements</h2>
     </section>
     <section class="sections" id="Flexbox">
-      <h2>Flexbox</h2>
+      <h2 id="section-header">Flexbox</h2>
     </section>
     <section class="sections" id="Grid">
-      <h2>Grid</h2>
+      <h2 id="section-header">Grid</h2>
     </section>
     <section class="sections" id="Responsive-Design">
-      <h2>Responsive Design</h2>
+      <h2 id="section-header">Responsive Design</h2>
     </section>
     <section class="sections" id="Design">
-      <h2>Design</h2>
+      <h2 id="section-header">Design</h2>
     </section>
     <section class="sections" id="Styling-Forms">
-      <h2>Styling Forms</h2>
+      <h2 id="section-header">Styling Forms</h2>
     </section>
     <section class="sections" id="Variables">
-      <h2>Variables</h2>
+      <h2 id="section-header">Variables</h2>
     </section>
     <section class="sections" id="Animations">
-      <h2>Animations</h2>
+      <h2 id="section-header">Animations</h2>
     </section>
     <section class="sections" id="Accessibility">
-      <h2>Accessibility</h2>
+      <h2 id="section-header">Accessibility</h2>
     </section>
   </main>
   <script src="/scripts/nav.js"></script>
 
   <footer>
-    <!-- Footer content -->
-  </footer>
-
+  <div class="footer-container">
+    <div class="footer-section" id="footer-about">
+      <h3>About &lt;ADJ/Code&gt;</h3>
+      <p>
+        The creator of this website has only centered a div twice in his life.
+         Don't tell anyone.
+      </p>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Connect</h3>
+      <div class="social-links">
+        <a href="https://github.com/andredudley" target="_blank"><span class="logo fa fa-github fa-2x" aria-label="github"></span></a>
+        <a href="https://www.linkedin.com/in/andre-dudley-jr/" target="_blank"><span class="logo fa fa-linkedin" aria-label="linkedin"></span></a>    
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2026 &lt;ADJ/Code&gt;. All rights reserved. Made with &hearts; for web devs, and those who are trying to be.</p>
+  </div>
+</footer>
 </body>
 </html>
