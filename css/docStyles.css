@@ -287,6 +287,10 @@ body::-webkit-scrollbar-thumb:hover {
   margin-bottom: 1rem;
 }
 
+section h3 {
+  margin: 1rem;
+}
+
 /*sets top margin for first section, doesn't change the others*/
 .section-part:first-of-type {
   margin-top: 2rem;
@@ -320,6 +324,34 @@ code {
   font-family: 'Courier New', monospace;
   font-size: 0.9em;
   color: var(--color3);
+}
+
+.code-examples { 
+  margin: 1rem auto;
+  text-align: center;
+}
+
+/*list styling*/
+li {
+  padding: .25rem;
+}
+
+/*table styling*/
+.table-examples { 
+  display: table;
+  margin: 2rem auto;
+  width: 75%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.table-examples td { 
+  padding: .5rem;
+  border-top: solid 2px var(--color3);
+}
+
+.table-examples th {
+  padding: .75rem;
 }
 
 /*image styling (MIGHT not use in favor of code elements)*/
@@ -383,6 +415,7 @@ img {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 1.5rem;
+    margin-left: -25vw /*temporary solution for aligning footer container*/
   }
   
   .footer-section h3::after {
@@ -396,6 +429,10 @@ img {
   
   .social-links {
     justify-content: center;
+  }
+
+  .footer-bottom { 
+    margin-left: -2.5vw; /*temporary solution for aligning bottom of footer*/
   }
 }
 

@@ -164,21 +164,23 @@
         </code>
         <p>
           You have your selector, the property you want to set, and the value you want to set it to. 
-          Think about it this way: <br>
-          <ul>
+          Think about it this way: 
+        </p>
+        <ul>
             <li>Selector &mdash; targets the specific HTML element you want to style. Selectors can include <code>type</code>, <code>.class</code>, and <code>#id</code></li>
             <li>Property &mdash; targets what you want to change about the HTML element. This can range from <code>color</code>, to <code>font-family</code>, to <code>background</code>, and much more.</li>
             <li>Value &mdash; sets the value of the property you wish to style.</li>
           </ul>
-        </p>
         <p>
-          You can also apply the same set of styles to multiple selectors. Just look at this code for example.<br>
+          You can also apply the same set of styles to multiple selectors. Just look at this code for example.
+          </p>
           <code class="code-examples">
               #title, <br>
               .subtitle { <br>
                 &emsp;color: blue; <br>
               }
-          </code> <br>
+          </code>
+        <p>
           Here, you can see that there are <i>multiple</i> selectors. 
           These selectors target elements in your HTML document that have an <code>id</code> value (beginning with #) of &quot;title&quot;, 
           while also targeting elements that have a <code>class</code> value (beginning with .) of &quot;subtitle&quot;.
@@ -193,89 +195,160 @@
         </p>
       </section>
 
-      <section class="section-part" id="selectors">
-        <h2>Selectors and Why They Matter</h2>
-        <p>Selectors are how you tell CSS what to target. We touched on this very briefly in the basic syntax section, and now it's time to go into a bit more detail.</p>
-        <p>You will be working with four selectors constantly throughout your time in CSS: </p>
-
-        <section class="selectors-part" id="universal-selector">
-          <h3>Universal Selectors (<code>*</code>)</h3>
-          <p>The universal selector targets every element on the page.</p>
-          <code class="code-examples">
-            * { <br>
-            &emsp;margin: 0; <br>
-            &emsp;padding: 0; <br>
-            }
-          </code>
-          <p>
-            Universal selectors are mostly used as CSS resets to remove the browser's default spacing. 
-            Be sure to use this sparingly, as applying styles to <i>every</i> element can be taxing on performance, and overly broad.
-          </p>
-        </section>
-
-        <section class="selectors-part" id="element-selector">
-          <h3>Element Selector</h3>
-          <p>
-            Element selectors target all instances with a specifc HTML tag. 
-            For example, if you want to target all <code>p</code> elements in your HTML file, your CSS would look like: 
-          </p>
-          <code>
-            p { <br>
-              line-height: 1.5 rem; <br>
-              color: purple;
-            }
-          </code>
-          <p>
-            With this CSS code, every single p element will be targeted with the given CSS rule.
-          </p>
-        </section>
-
-        <section class="selectors-part" id="class-selector">
-          <h3>Class Selector (<code>.</code>)</h3>
-          <p>Class selectors target elements with a specific <code>class</code> attribute. This selector is most commonly used, and the most flexible.</p>
-          <code>
-            .warning { <br>
-              color: yellow; <br>
-            } 
-          </code>
-          <p>
-            A single class can be reused across multiple elements, and a single element can have a multitude of classes. 
-          </p>
-        </section>
-
-        <section class="selectors-part" id="id-selector">
-          <h3>ID Selector (<code>#</code>)</h3>
-          <p>
-            ID selectors target a single element with a specific <code>id</code> attribute.
-            IDs <i>must</i> be unique within a page. You will never see the same <code>id</code> attribute twice in the same page.
-          </p>
-          <code>
-            #title { <br>
-              background-color: navy; <br>
-              color: white; <br>
-            }
-          </code>
-          <p>
-            IDs have the highest specificity of the four selectors (more on that later), so use them sparingly. 
-            Use them for unique elements or sections like headers, footers, or main containers.
-          </p>
-        </section>
+      <section class="section-part" id="basic-selectors">
+        <h2>Selectors</h2>
+        <p>
+          You will learn more about selectors in detail in the <a class="ref-link">Attribute Selectors</a> portion of this guide.
+          But for now, all you need to know is that in the early stages of your CSS journey you will mainly deal with three types of selectors:
+        </p>
+        <h3>Element Selectors</h3>
+        <p>Element selectors target all instances of an HTML tag.</p>
+        <code class="code-examples">
+          p { <br>
+            &emsp;line-height: 1.5; <br>
+          }
+        </code>
+        <h3>Class Selectors (<code>.</code>)</h3>
+        <p>Class selectors target all elements with a specific class. This will be your workhorse in CSS.</p>
+        <code class="code-examples">
+          .warning { <br>
+            &emsp;background-color: red; <br>
+          }
+        </code>
+        <p>One class can be used everywhere, and an element can have multiple classes.</p>
+        <h3>ID Selectors</h3>
+        <p>ID selectors target a single, unique element by its unique ID.</p>
+        <code class="code-examples">
+          #title { <br>
+            &emsp;color: green; <br>
+          }
+        </code>
+        <p>
+          Be sure to use IDs sparingly. 
+          They are powerful, but do not have the flexibility of classes. 
+          As a result, they become very hard to override when needed.
+        </p>
+        <table class="table-examples" id="basic-selectors-table">
+          <thead>
+            <tr>
+              <th>Selector</th>
+              <th>Example</th>
+              <th>When to Use</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td>Element</td>
+                <td><code>p</code></td>
+                <td>Styling ALL paragraphs the same way.</td>
+              </tr>
+              <tr>
+                <td>Class</td>
+                <td><code>.warning</code></td>
+                <td>Reusble styles for all elements with a given class.</td>
+              </tr>
+              <tr>
+                <td>ID</td>
+                <td><code>#title</code></td>
+                <td>For one of a kind elements.</td>
+              </tr>
+          </tbody>
+        </table>
+        <p>And that's essentially it, honestly. You can build entire websites with just these three.</p>
       </section>
 
-      <section class="section-part" id="cascade">
+      <section class="section-part" id="basic-cascade">
         <h2>The Cascade Algorithm</h2>
         <p>
-          Now, as we touched on at the beginning of this guide, CSS stands for (say it with me now): <br>
-          Cascading. Style. Sheets.
-        </p>
-        <p>Now what does that <i>Cascading</i> part mean?</p>
-        <p>
-          The cascading algorithm determines how the browser decides which styles to apply when multiple rules target the same element.
-        </p>
-        <p>
-          
-        </p>
+          The cascade algorithm can seem a bit complex at face value, and it <i>can</i> become complex.
+           But it is very important to know the basics, at least.
+           You can learn more about this in the <a class="ref-link">Attribute Selectors</a> section of this guide, but let's begin with the basics first.
+          </p>
+          <p>
+            As we know, CSS stands for Cascading Style Sheets. 
+            The Cascading portion is actually an algorithm your browser uses to decide what style to use when multiple rules target the same element.
+          </p>
+          <section class="basic-cascade-part" id="basic-specificity">
+            <h3>Specificity</h3>
+            <p>Specificity acts as a "weight", and some selectors are "heavier" than others.</p>
+            <p>Here's a list of the selectors from strongest specificity to weakest</p>
+            <ol>
+              <li>Inline Styles (<code>style="..."</code>)</li>
+              <li>ID Selectors (<code>#title</code>)</li>
+              <li>Class Selectors (<code>.warning</code>)</li>
+              <li>Element Selectors (<code>p</code>)</li>
+            </ol>
+          </section>
+          <section class="basic-cascade-part" id="basic-source-order">
+            <h3>Source Order</h3>
+            <p>If the specificity is tied, the last rule that targets the same element wins.</p>
+            <p>For example: </p>
+            <code class="code-examples">
+              p { color: red; } <br>
+              p { color: blue; }  /* This wins */
+            </code>
+          </section>
+          <section class="basic-cascade-part" id="basic-inheritance">
+            <h3>Inheritance</h3>
+            <p>Some properties pass from parent to child. For example, if you had a <code>p</code> element inside of a <code>div</code> element.</p>
+            <code class="code-examples">
+              &lt;div&gt; <br>
+              &lt;p&gt;This will inherit gray from the div&lt;/p&gt; <br>
+              &lt;/div&gt;
+            </code>
+            <p>And then styled the div:</p>
+            <code>
+              div { color: gray; }
+            </code>
+            <p>
+              Then the <code>p</code> element would inherit the color rule of the div.
+              It is important to know that inheritance doesn't apply to everything. 
+              For example, margins, padding, and borders generally are not inhrited, but colors and fonts are inherited.
+            </p>
+          </section>
+          <section class="basic-cascade-part" id="basic-important">
+            <h3><code>!important</code>: The Gamebreaker</h3>
+            <p><code>!important</code> will force whatever element, regardless of initial specificity, to have the utmost highest specificity.</p>
+            <p>
+              <strong>Do not use <code>!important</code> unless absolutely necessary.</strong> 
+              This breaks the natural cascade, and if you eventually need to override it you will have to slap the <code>!important</code> tag on something else with an even higher specificity, and it becomes an agonizingly endless cycle of importance.
+              Use it wisely, unless you enjoy hours of debugging in CSS.
+            </p>
+            <code>
+              p { color: red; !important } /* Forces this to win */
+            </code>
+          </section>
+          <section class="basic-cascade-part" id="in-practice">
+            <h3>Cascade in Practice</h3>
+            <p>Take the following HTML:</p>
+            <code>
+              &lt;p id="content" class="text"&gt;What color is this?&lt;/p&gt;
+            </code>
+            <p>And then take this CSS stylesheet</p>
+            <code>
+              /* Element selector — weakest */ <br>
+              p { <br>
+                &emsp;color: gray; <br>
+            } <br>
+            <br>
+              /* Class selector — stronger */ <br>
+              .text { <br>
+                &emsp;color: green; <br>
+            } <br>
+            <br>
+              /* ID selector — strongest */ <br>
+              #content { <br>
+                &emsp;color: blue; <br>
+            }
+            </code>
+            <p>
+              If you remove the ID, green wins (class beats element). 
+              If you remove both ID and class, gray wins (element, and it's the only rule left).
+            </p>
+            <p>And that's the cascade. Nothig more than weight and order. We will go a bit further in depth regarding this later, but this is it for now.</p>
+          </section>
       </section>
+
       <section class="section-part" id="comments">
         <h2>Comments</h2>
         <p>
@@ -361,6 +434,25 @@
               /* This comment<code>/* will break */</code> when you try to nest */
           </p>
       </section>
+      <section class="section-part" id="css-reset">
+        <h2>CSS Reset</h2>
+        <p>
+          Browsers have default styles. 
+          They add margins to <code>body</code>, padding to <code>ul</code>, boldness to headings. 
+          It essentially tries to do its own thing.
+          These defaults are inconsistent across browsers and interfere with your designs.
+        </p>
+        <p>So, we can reset it with the universal selector (<code>*</code>).</p>
+        <p>This is the simplest CSS reset you'll usually find:</p>
+        <code>
+          &emsp;* { <br>
+        margin: 0; <br>
+        padding: 0; <br>
+        box-sizing: border-box; <br>
+      }
+        </code>
+        <p>Be sure to put this on top of your stylesheet, before any other rules.</p>
+      </section>
       <section class="section-part" id="dev-tools">
         <h2>Browser Developer Tools</h2>
         <p>
@@ -374,6 +466,27 @@
           And for Mac, just hit Cmd + Option + I. <br>
           And, if all else fails, you can always right click and select the option to inspect.
         </p>
+        <p>Here's some of what you can do with DevTools:</p>
+        <ul>
+          <li>See exactly which styles are applying to an element</li>
+          <li>See which styles are crossed out (overridden by specificity or order)</li>
+          <li>Toggle properties on and off</li>
+          <li>Test changes live without editing your files</li>
+        </ul>
+        <p>So, if something isn't working, just open DevTools. It shows you exactly what the browser is seeing, and not just what you intended with your code.</p>
+      </section>
+      <section class="section-part" id="basic-need-to-know">
+        <h2>What You Need to Remember</h2>
+        <ol>
+          <li>Use external CSS &mdash; One file, linked from HTML</li>
+          <li>Remember your syntax &mdash; <code>selector { property: value; }</code></li>
+          <li>Use classes &mdash; They are maintainable and flexible</li>
+          <li>Understand specificity &mdash; ID &gt; Class &gt; Element</li>
+          <li>Source order matters &mdash; Last rule wins if specificity is tied</li>
+          <li>Avoid <code>!important</code> &mdash; It's a trap!</li>
+          <li>Be sure to reset CSS &mdash; Start from a clean slate</li>
+          <li>Use DevTools &mdash; When it doubt, inspect it out</li>
+        </ol>
       </section>
     </section>
     <section class="sections" id="Colors">
@@ -393,6 +506,353 @@
     </section>
     <section class="sections" id="Attribute-Selectors">
       <h2 id="section-header">Attribute Selectors</h2>
+      <p>We have covered selectors briefly in <a class="ref-link">the Basics</a> section of this guide. But, it is important to understand selectors and the cascade in detail.</p>
+      <section class="section-part" id="selectors">
+        <h2>Selectors and Why They Matter</h2>
+        <p>Selectors are how you tell CSS what to target. We touched on this very briefly in the basic syntax section, and now it's time to go into a bit more detail.</p>
+        <p>You will be working with four selectors constantly throughout your time in CSS: </p>
+
+        <section class="selectors-part" id="universal-selector">
+          <h3>Universal Selectors (<code>*</code>)</h3>
+          <p>The universal selector targets every element on the page.</p>
+          <code class="code-examples">
+            * { <br>
+            &emsp;margin: 0; <br>
+            &emsp;padding: 0; <br>
+            }
+          </code>
+          <p>
+            Universal selectors are mostly used as CSS resets to remove the browser's default spacing. 
+            Be sure to use this sparingly, as applying styles to <i>every</i> element can be taxing on performance, and overly broad.
+          </p>
+        </section>
+
+        <section class="selectors-part" id="element-selector">
+          <h3>Element Selector</h3>
+          <p>
+            Element selectors target all instances with a specifc HTML tag. 
+            For example, if you want to target all <code>p</code> elements in your HTML file, your CSS would look like: 
+          </p>
+          <code>
+            p { <br>
+              line-height: 1.5 rem; <br>
+              color: purple;
+            }
+          </code>
+          <p>
+            With this CSS code, every single p element will be targeted with the given CSS rule.
+          </p>
+        </section>
+
+        <section class="selectors-part" id="class-selector">
+          <h3>Class Selector (<code>.</code>)</h3>
+          <p>Class selectors target elements with a specific <code>class</code> attribute. This selector is most commonly used, and the most flexible.</p>
+          <code>
+            .warning { <br>
+              color: yellow; <br>
+            } 
+          </code>
+          <p>
+            A single class can be reused across multiple elements, and a single element can have a multitude of classes. 
+          </p>
+        </section>
+
+        <section class="selectors-part" id="id-selector">
+          <h3>ID Selector (<code>#</code>)</h3>
+          <p>
+            ID selectors target a single element with a specific <code>id</code> attribute.
+            IDs <i>must</i> be unique within a page. You will never see the same <code>id</code> attribute twice in the same page.
+          </p>
+          <code>
+            #title { <br>
+              background-color: navy; <br>
+              color: white; <br>
+            }
+          </code>
+          <p>
+            IDs have the highest specificity of the four selectors (more on that later), so use them sparingly. 
+            Use them for unique elements or sections like headers, footers, or main containers.
+          </p>
+        </section>
+      </section>
+
+      <section class="section-part" id="cascade">
+        <h2>The Cascade Algorithm</h2>
+        <p>
+          Now, as we touched on at the beginning of this guide, CSS stands for (say it with me now): <br>
+          Cascading. Style. Sheets.
+        </p>
+        <p>Now what does that <i>Cascading</i> part mean?</p>
+        <p>
+          The cascading algorithm determines how the browser decides which styles to apply when multiple rules target the same element.
+        </p>
+        <p>
+          Well, when the browser renders your page, it will follow a four stage algorithm:
+        </p>
+        <section class="cascade-part" id="stage-one-origin">
+          <h3>Stage One: Origin</h3>
+          <p>Your browser will collect styles from three origins:</p>
+          <ul>
+            <li>Browser defaults&mdash;the user agent stylsheet.</li>
+            <li>User styles&mdash;usually the accessibility settings and browser extensions.</li>
+            <li>Author styles&mdash;this is your CSS!</li>
+          </ul>
+          <p>Now, in terms of precendence, the author's stylesheet will take precedence over the user styles, which take precedence over the browser defaults.</p>
+        </section>
+        <section class="cascade-part" id="stage-two-importance">
+          <h3>Stage Two: Importance</h3>
+          <p>
+            Now, moving on to importance, it is... important (pun intended) to know that the browser goes within each origin and separates the rules marked with <code>!important</code> before sorting the rules by importance.
+            That's a lot of important being said, so hear me out. Think of importance as a two-tier system: <br>
+            <br>
+            The <code>!important</code> tier and the normal tier.
+          </p>
+          <p>
+            The browser will go through the three origins we discussed earlier (browser defaults, user styles, author styles) and essentially pluck the rules marked with <code>!important</code> and put them in the <code>!important</code> tier.
+            After the <code>!important</code> rules are separated, the browser will begin to sort. 
+            Here is the order of importance from highest to lowest:
+          </p>
+          <ol>
+            <li>Author's <code>!important</code> rules</li>
+            <li>User's <code>!important</code> rules</li>
+            <li>Browser's <code>!important</code> rules</li>
+            <li>Browser's normal rules</li>
+            <li>User's normal rules</li>
+            <li>Author's normal rules</li>
+          </ol>
+          <p>
+            Now, I know you see it. And, I'm sure you might be thinking <br>
+            "ADJ, why is the author's normal rules so low, especially when you said that the author's stylesheet takes precedent earlier?"
+          </p>
+          <p>
+            First of all, I am so glad you've been paying attention. Really good job. I'm serious.
+            But, also, the author's normal rules take lowest priority for the sake of the user's ability to override styles for accessibility needs.
+          </p>
+          <p>Makes sense? Okay. Let's move on to stage three.</p>
+        </section>
+        <section class="cascade-part" id="stage-three-specificity">
+          <h3>Stage Three: Specificity</h3>
+          <p>Alright, so the browser has filtered by origin and importance. Now, the browser calculates specificity.</p>
+          <p>
+            Think of specificity as a weight. 
+            Every kind of selector has a weight. 
+            When two or more CSS rules target the same element, the browser applies the rule with the highest specificity weight, regardless of the order they are in.
+          </p>
+          <p>
+            With this in mind, specificity can become a hierarchical scoring system where every selector type contributes points, but not all points are equal.
+            Take this table in mind: 
+          </p>
+          <table class="table-examples" id="specificity-table">
+            <thead>
+              <tr>
+                <th>Level</th>
+                <th>Selector Type</th>
+                <th>Example</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1 (highest)</td>
+                <td>Inline styles</td>
+                <td><code>style="color: red;"</code></td>
+                <td>1,0,0,0</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>ID selectors</td>
+                <td><code>#header</code></td>
+                <td>0,1,0,0</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Psuedo-classes</td>
+                <td><code>:hover</code></td>
+                <td>0,0,1,0</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Attribute selectors</td>
+                <td><code>[type="text"]</code></td>
+                <td>0,0,1,0</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Class selectors</td>
+                <td><code>.warning</code></td>
+                <td>0,0,1,0</td>
+              </tr>
+              <tr>
+                <td>4 (lowest)</td>
+                <td>Element selectors</td>
+                <td><code>p</code>, <code>h1</code></td>
+                <td>0,0,0,1</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            The universal selector (<code>*</code>), combinators (<code>+</code>, <code>></code>, <code>~</code>, &ThickSpace;), 
+            and the :where() pseudo-class do not contribute to specificity.
+          </p>
+          <p>
+            Now that we have our table, and know what each selector weighs, we can use this to tackle more complex selectors.
+            Take the following selector for example:
+          </p>
+          <code class="code-examples">
+            #sidebar .nav-links a:hover { <br>
+
+            }
+          </code>
+          <p>I know it looks strange and confusing, but let's work it out.</p>
+          <p>
+            First, let's break it down into four parts.
+          </p>
+          <table class="table-examples" id="specificity-breakdown-table">
+            <thead>
+              <tr>
+                <th>Part</th>
+                <th>Selector Type</th>
+                <th>Specificity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>#sidebar</code></td>
+                <td>ID</td>
+                <td>0,1,0,0</td>
+              </tr>
+              <tr>
+                <td><code>.nav-links</code></td>
+                <td>Class</td>
+                <td>0,0,1,0</td>
+              </tr>
+              <tr>
+               <td><code>a</code></td>
+               <td>Element</td>
+               <td>0,0,0,1</td>
+              </tr>
+              <tr>
+                <td><code>:hover</code></td>
+                <td>Pseudo-class</td>
+                <td>0,0,1,0</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Add the specificities column together: 0,1,2,1.
+          </p>
+          <p>
+            Now, in terms of specificity, the browser goes from the leftmost number to the right. 
+            In this case, it would go from 0, to 1, to 2, to 1 and compare it to the numbers of other elements. 
+          </p>
+          <p>
+            For example, let's have the browser compare this sample element to <code>.nav-links a:hover{}</code>.
+          </p>
+          <code>
+            #sidebar .nav-links a:hover {} /*0,1,2,1*/<br>
+            .nav-links a:hover{} /*0,0,2,1*/
+          </code>
+          <p>Let's break this into a table as well.</p>
+          <table class="table-examples" id="element-comparison-example">
+            <thead>
+              <tr>
+                <th>Element</th>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>#sidebar .nav-links a:hover {}</code></td>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td><code>.nav-links a:hover {}</code></td>
+                <td>0</td>
+                <td>0</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Now, that the elements are broken down into columns, we can compare each element's value in each column.
+            Moving from left to right, if a the elements have an equal value in said column you move on to the next. 
+            The first column where one number is higher determines the winner.
+          </p>
+          <p>
+            In our example, <code>#sidebar .nav-links a:hover {}</code> wins because its column 2 value of 1 is greater than 0.
+          </p>
+        </section>
+        <p>
+          In terms of practicality, it is best practice to use classes. 
+          They have enough specificity to override element selectors, but can be overridable by ID selectors if needed.
+        </p>
+        <p>
+          When it comes to specificity, always remember the rule of thumb: make your specificity as high as you need it to be, but no higher than that.
+        </p>
+           <section class="cascade-part" id="stage-four-source-order">
+        <h3>Stage Four: Source Order</h3>
+        <p>
+          Now, if the browser comes across two rules that both:
+        </p>
+        <ol>
+          <li>Have the same origin</li>
+          <li>Have the same importance</li>
+          <li>Have the same specificity</li>
+        </ol>
+        <p>
+          The browser will then look at source order. The rule that appears later in the stylesheet wins.
+        </p>
+        <p>Example: </p>
+        <code class="code-examples">
+          p { color: red;} <br>
+          p { color: blue;} /* This will be the winner */
+        </code>
+      </section>
+      <section class="cascade-part" id="all-together">
+        <h3>Put it All Together</h3>
+        <p>Take this HTML code for example:</p>
+        <code>
+          &lt;p id="content" class="text"&gt;What color am I?&lt;/p&gt;
+        </code>
+        <p>And then this stylesheet:</p>
+        <code>
+          /* Rule A: specificity 0,0,0,1 */ <br>
+          p { color: gray; } /* <br>
+          Rule B: specificity 0,0,1,0 */ <br>
+          .text { color: green; } <br>
+          /* Rule C: specificity 0,1,0,0 */ <br>
+          #content { color: blue; } /* <br>
+          Rule D: same selector as Rule C, appears later */ <br>
+          #content { color: purple; }
+        </code>
+        <p>
+          This is how the browser would break it down into the cascade algorithm:
+        </p>
+        <ol>
+          <li>Origin: All author normal rules</li>
+          <li>Importance: No rules marked as <code>!important</code></li>
+          <li>Specificity: Rules C and D will win (0,1,0,0 vs lower values)</li>
+          <li>Source Order: Rule D appears <i>after</i> Rule C, so Rule D wins.</li>
+        </ol>
+        <p>
+          As a result of Rule D winning, the text will be purple.
+        </p>
+      </section>
+      <section class="cascade-part" id="important-insight">
+        <h3>A Little More About The <code>!important</code> Rule</h3>
+        <p>
+          You may have seen the <code>!important</code> rule flying around during my explanation, but have no clue on what it is.
+          No need to worry
+        </p>
+      </section>
+      </section>
     </section>
     <section class="sections" id="Pseudo-Classes-Elements">
       <h2 id="section-header">Pseudo Classes and Elements</h2>
